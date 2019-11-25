@@ -1,0 +1,71 @@
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
+  /* Set a specific height */
+  width: 100%;
+  height: width/4;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: left;
+  width: auto;
+  color: white;
+  padding-left:10px;
+  padding-top:1%;
+  padding-bottom:0px;
+}
+
+h2 {
+  padding-top:20px;
+  text-align: center;
+  float: center;
+}
+
+div div {
+  padding-bottom: 10px;
+}
+
+.main-text, h3{
+  color: green;
+}
+
+img{
+  height:auto;
+}
+
+.small-img{
+  width:95%;
+}
+
+.right-img{
+  width:95%;
+  height:auto;
+  float:right;
+}
+
+.main-img{
+  width: 100%;
+  float:center;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 54px;
+}
+
+.pic-text{
+  margin-bottom:0px;
+}
