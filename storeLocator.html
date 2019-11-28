@@ -8,12 +8,18 @@
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="unsemantic-grid-responsive-tablet.css">
   <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+  crossorigin=""></script>
   <meta name="viewport" content="
       width=device-width,
       initial-scale=1,
       minimum-scale=1,
       maximum-scale=1" />
-  <title>Store Locator</title>
+  <title>Store Locator - The Little Green Larder</title>
 </head>
 
 <body>
@@ -43,23 +49,71 @@
   <div class="content">
     <div class="hero-image" id="dynamicheight">
       <div class="hero-text">
-        <h1>This is a title</h1>
-        <p class="pic-text">This is a subtitle</p>
+        <h1>The Little Green Larder</h1>
+        <p class="pic-text">STORE LOCATOR</p>
       </div>
     </div>
     <br>
     <div class="grid-container">
       <div class="grid-100">
         <section>
-          <h3>lorem ipsum text</h3>
-          <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
+          <h3>Zero-waste shops in Dundee!</h3>
+          <p class="main-text">The map below showcases a few shops in the local area that promote the ethos of zero-waste living, click on any of the icons to see a brief summary of each shop. To learn more about a shop click on the link provided in the summary. Enjoy!  </p>
         </section>
       </div>
       <br>
       <div class="grid-100">
         <section>
-          <!--AREA FOR MAP API-->
+          <div id="mapid"></div>
+          <script>
+            var mymap = L.map('mapid').setView([56.4599, -2.9685], 13);
+
+            var LittleGreenLarderIcon = L.icon({
+                iconUrl: 'green.png',
+                iconSize:     [50, 50], // size of the icon
+            });
+
+            var TaysideIcon = L.icon({
+                iconUrl: 'reuse.png',
+                iconSize:     [50, 50], // size of the icon
+            });
+
+            var SCRAPanticsIcon = L.icon({
+                iconUrl: 'scrap.png',
+                iconSize:     [50, 50], // size of the icon
+            });
+
+            var TransformIcon = L.icon({
+                iconUrl: 'recycle.png',
+                iconSize:     [50, 50], // size of the icon
+            });
+
+
+
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+          	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          	maxZoom: 18,
+          	id: 'mapbox.streets',
+          	accessToken: 'pk.eyJ1IjoiYW5keWRvaGVydHkxNyIsImEiOiJjazJlbXN2Y2QwNnZkM2hzNXIwMHY4MjBtIn0.ujrr5_L7J-YxzVyN8Au-dQ'
+          }).addTo(mymap);
+
+          var marker = L.marker([56.456012, -2.992329], {icon: LittleGreenLarderIcon}).addTo(mymap);
+          var marker2 = L.marker([56.463883, -2.985357], {icon: TaysideIcon}).addTo(mymap);
+          var marker3 = L.marker([56.463977, -2.983983], {icon: SCRAPanticsIcon}).addTo(mymap);
+          var marker4 = L.marker([56.470051, -2.972281], {icon: TransformIcon}).addTo(mymap);
+
+          var circle = L.circle([56.463883, -2.985357], {
+          	color: '#2D5B1F',
+          	fillColor: '#00B54B',
+          	fillOpacity: 0.5,
+          	radius: 1500
+          }).addTo(mymap);
+
+          marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. </p>").openPopup();
+          marker2.bindPopup("<strong>Tayside Re-Users</strong><p><a href=\"http://taysidereusers.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">Tayside Re-Users</a>, provide low cost, quality furnishings to households in Tayside.</p> <p> They're accredited by Revolve, Scotland’s quality standard for re-use. It means that everything they refurbish has to meet strict safety requirements before they can sell it in their shop</p>").openPopup();
+          marker3.bindPopup("<strong>SCRAPantics</strong><p><a href=\"http://scrapantics.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">SCRAPantics</a>, is a scrap store in Dundee which uses donations and sources scrap materials that can be used to make anything and everything</p>").openPopup();
+          marker4.bindPopup("<strong>Transform Furniture</strong><p><a href=\"https://www.transformcommunity.org.uk/transform-furniture//\" target=\"_blank\" title=\"Opens in a new window\">Transform Furniture</a>, provide quality reusable furniture and electrical household items to many in Dundee. </p> <p>The project has had a significant social, economic and environmental impact on the local community, and has received considerable praise and support from those benefiting from its service  </p>").openPopup();
+          </script>
         </section>
       </div>
     </div>
