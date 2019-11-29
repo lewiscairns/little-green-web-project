@@ -1,7 +1,7 @@
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("banner.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("greenBanner.jpg");
   /* Set a specific height */
   width: 100%;
   height: width/4;
@@ -70,4 +70,4 @@ img{
   margin-bottom:0px;
 }
 
-#mapid { height: 400px; }
+#mapid { height: 600px; }
