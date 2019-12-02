@@ -4,7 +4,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("greenBanner.jpg");
   /* Set a specific height */
   width: 100%;
-  height: width/4;
+  height: width/7;
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -16,23 +16,31 @@
   text-align: left;
   width: auto;
   color: white;
-  padding-left:10px;
+  padding-left:50px;
   padding-top:1%;
   padding-bottom:0px;
+  font-size: 25px;
 }
 
 h2 {
   padding-top:20px;
   text-align: center;
   float: center;
+  font-family: 'Rubik', sans-serif;
 }
 
 div div {
   padding-bottom: 10px;
 }
 
-.main-text, h3{
-  color: green;
+h3 {
+  color: black;
+  font-family: 'Rubik', sans-serif;
+}
+
+.main-text{
+  color: #5E8C61;
+  font-family: 'Rubik', sans-serif;
 }
 
 img{
