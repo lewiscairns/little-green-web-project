@@ -62,6 +62,17 @@ crossorigin=""/>
           <p class="main-text">The map below showcases a few shops in the local area that promote the ethos of zero-waste living, click on any of the icons to see a brief summary of each shop. To learn more about a shop click on the link provided in the summary. Enjoy!  </p>
         </section>
       </div>
+      <div class ="container">
+        <section>
+          <input type="text" id="search" onkeyup="search()" placeholder="Search.." title="Type in a catergory">
+          <ul id="menu">
+            <li><a href="#">The Little Green Larder</a></li>
+            <li> <a href="#">Tayside Re-Users</a> </li>
+            <li> <a href="#">SCRAPantics</a> </li>
+            <li> <a href="#">Transform Furniture</a> </li>
+          </ul>
+        </section>
+      </div>
       <br>
       <div class="grid-100">
         <section>
@@ -146,6 +157,24 @@ crossorigin=""/>
       div.css('height', width / 4)
     }
   }
-</script>
 
+  function search() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("menu");
+    li = ul.getElementsByTagName("li");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+</script>
 </html>
