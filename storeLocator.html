@@ -60,16 +60,17 @@ crossorigin=""/>
         <section>
           <h3>Zero-waste shops in Dundee!</h3>
           <p class="main-text">The map below showcases a few shops in the local area that promote the ethos of zero-waste living, click on any of the icons to see a brief summary of each shop. To learn more about a shop click on the link provided in the summary. Enjoy!  </p>
+          <p id="demo"></p>
         </section>
       </div>
       <div class ="container">
         <section>
-          <input type="text" id="search" onkeyup="search()" placeholder="Search.." title="Type in a catergory">
+          <input type="text" id="search" onkeyup="search()" placeholder="Search.." title="Type in a shop name">
           <ul id="menu">
-            <li><a href="#">The Little Green Larder</a></li>
-            <li> <a href="#">Tayside Re-Users</a> </li>
-            <li> <a href="#">SCRAPantics</a> </li>
-            <li> <a href="#">Transform Furniture</a> </li>
+            <li><button onclick="openFromSearch(1)">The Little Green Larder</button></li>
+            <li><button onclick="openFromSearch(2)">Tayside Re-Users</button></li>
+            <li><button onclick="openFromSearch(3)">SCRAPantics</button></li>
+            <li><button onclick="openFromSearch(4)">Transform Furniture</button></li>
           </ul>
         </section>
       </div>
@@ -118,8 +119,19 @@ crossorigin=""/>
           marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. <br> <br>272 Perth Road <br> Dundee, Angus <br> DD2 1AE <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>10am - 6pm</strong> <br> Tuesday: <strong>10am - 6pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>4pm - 7pm</strong> <br> Friday: <strong>10am - 6pm</strong> <br> Saturday: <strong>9am - 5pm</strong> <br> Sunday: <strong>11am - 2pm</strong>  </p>")
           marker2.bindPopup("<strong>Tayside Re-Users</strong><p><a href=\"http://taysidereusers.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">Tayside Re-Users</a>, provide low cost, quality furnishings to households in Tayside.</p> <p> They're accredited by Revolve, Scotland’s quality standard for re-use. It means that everything they refurbish has to meet strict safety requirements before they can sell it in their shop. <br> <br>75, 73 Douglas St <br> Dundee, Angus <br> DD1 5AN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9am - 5pm</strong> <br> Tuesday: <strong>9am - 5pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>9am - 5pm</strong> <br> Friday: <strong>9am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong> </p>")
           marker3.bindPopup("<strong>SCRAPantics</strong><p><a href=\"http://scrapantics.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">SCRAPantics</a>, is a scrap store in Dundee which uses donations and sources scrap materials that can be used to make anything and everything. <br> <br> They recycle industry excess into art & design materials for use in the celebration of community togetherness. <br> <br>Unit 2, Meadow Mill, W Henderson's Wynd<br> Dundee, Angus <br> DD1 5BY <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>CLOSED</strong> <br> Tuesday: <strong>10am - 2pm</strong> <br> Wednesday: <strong>12pm - 4pm</strong> <br> Thursday: <strong>12pm - 6pm</strong> <br> Friday: <strong>CLOSED</strong> <br> Saturday: <strong>CLOSED</strong> <br> Sunday: <strong>CLOSED</strong></p>")
-
           marker4.bindPopup("<strong>Transform Furniture</strong><p><a href=\"https://www.transformcommunity.org.uk/transform-furniture//\" target=\"_blank\" title=\"Opens in a new window\">Transform Furniture</a>, provide quality reusable furniture and electrical household items to many in Dundee. </p> <p>The project has had a significant social, economic and environmental impact on the local community, and has received considerable praise and support from those benefiting from its service. <br> <br>20 Victoria Road <br> Dundee, Angus <br> DD1 1JN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9:30am - 5pm</strong> <br> Tuesday: <strong>9:30am - 5pm</strong> <br> Wednesday: <strong>9:30am - 5pm</strong> <br> Thursday: <strong>9:30am - 5pm</strong> <br> Friday: <strong>9:30am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong>  </p>")
+
+          function openFromSearch(num) {
+            if (num == 1){
+              marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. <br> <br>272 Perth Road <br> Dundee, Angus <br> DD2 1AE <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>10am - 6pm</strong> <br> Tuesday: <strong>10am - 6pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>4pm - 7pm</strong> <br> Friday: <strong>10am - 6pm</strong> <br> Saturday: <strong>9am - 5pm</strong> <br> Sunday: <strong>11am - 2pm</strong>  </p>").openPopup();
+            } else if (num == 2) {
+              marker2.bindPopup("<strong>Tayside Re-Users</strong><p><a href=\"http://taysidereusers.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">Tayside Re-Users</a>, provide low cost, quality furnishings to households in Tayside.</p> <p> They're accredited by Revolve, Scotland’s quality standard for re-use. It means that everything they refurbish has to meet strict safety requirements before they can sell it in their shop. <br> <br>75, 73 Douglas St <br> Dundee, Angus <br> DD1 5AN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9am - 5pm</strong> <br> Tuesday: <strong>9am - 5pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>9am - 5pm</strong> <br> Friday: <strong>9am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong> </p>").openPopup();
+            } else if (num == 3) {
+              marker3.bindPopup("<strong>SCRAPantics</strong><p><a href=\"http://scrapantics.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">SCRAPantics</a>, is a scrap store in Dundee which uses donations and sources scrap materials that can be used to make anything and everything. <br> <br> They recycle industry excess into art & design materials for use in the celebration of community togetherness. <br> <br>Unit 2, Meadow Mill, W Henderson's Wynd<br> Dundee, Angus <br> DD1 5BY <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>CLOSED</strong> <br> Tuesday: <strong>10am - 2pm</strong> <br> Wednesday: <strong>12pm - 4pm</strong> <br> Thursday: <strong>12pm - 6pm</strong> <br> Friday: <strong>CLOSED</strong> <br> Saturday: <strong>CLOSED</strong> <br> Sunday: <strong>CLOSED</strong></p>").openPopup();
+            } else if (num == 4) {
+              marker4.bindPopup("<strong>Transform Furniture</strong><p><a href=\"https://www.transformcommunity.org.uk/transform-furniture//\" target=\"_blank\" title=\"Opens in a new window\">Transform Furniture</a>, provide quality reusable furniture and electrical household items to many in Dundee. </p> <p>The project has had a significant social, economic and environmental impact on the local community, and has received considerable praise and support from those benefiting from its service. <br> <br>20 Victoria Road <br> Dundee, Angus <br> DD1 1JN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9:30am - 5pm</strong> <br> Tuesday: <strong>9:30am - 5pm</strong> <br> Wednesday: <strong>9:30am - 5pm</strong> <br> Thursday: <strong>9:30am - 5pm</strong> <br> Friday: <strong>9:30am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong>  </p>").openPopup();
+            }
+          }
           </script>
         </section>
       </div>
@@ -168,7 +180,7 @@ crossorigin=""/>
 
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
+      a = li[i].getElementsByTagName("button")[0];
       if (filter.length == 0){
         li[i].style.display = "none";
       } else if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
