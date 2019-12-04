@@ -80,11 +80,23 @@ img{
 
 #mapid { height: 600px; }
 
+#menu button {
+  color: black;
+  border: 2px solid #4CAF50;
+  font-size: 20px;
+  padding: 10px 24px;
+  background-color: white;
+}
+
+#menu button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
 #search {
   width: 100%;
   font-size: 18px;
   padding: 11px;
-  border: 1px solid #ddd;
 }
 
 #menu {
@@ -93,13 +105,10 @@ img{
   margin: 0;
 }
 
-#menu li a {
-  padding: 12px;
+#menu li {
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
   text-decoration: none;
   color: black;
-  display: block
-}
-
-#menu li a:hover {
-  background-color: #eee;
 }
