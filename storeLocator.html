@@ -66,29 +66,41 @@ crossorigin=""/>
         <section>
           <div id="mapid"></div>
           <script>
+
+          // sets the co-ordinates from which the map will display and the zoom level of the application
+
             var mymap = L.map('mapid').setView([56.4599, -2.9685], 13);
 
+         // The little Green Larder's custom marker
+
             var LittleGreenLarderIcon = L.icon({
-                iconUrl: 'green.png',
+                iconUrl: 'green.png', // image path
                 iconSize:     [50, 50], // size of the icon
             });
+
+        // Tayside Re-User's custom marker
 
             var TaysideIcon = L.icon({
-                iconUrl: 'reuse.png',
+                iconUrl: 'reuse.png', // image path
                 iconSize:     [50, 50], // size of the icon
             });
+
+
+       // SCRAPantics's custom marker
 
             var SCRAPanticsIcon = L.icon({
-                iconUrl: 'scrap.png',
+                iconUrl: 'scrap.png', // image path
                 iconSize:     [50, 50], // size of the icon
             });
+
+      // Transform Furniture's custom marker
 
             var TransformIcon = L.icon({
-                iconUrl: 'recycle.png',
+                iconUrl: 'recycle.png', // image path
                 iconSize:     [50, 50], // size of the icon
             });
 
-
+     // Displays the map after the access token is entered
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
           	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -97,17 +109,14 @@ crossorigin=""/>
           	accessToken: 'pk.eyJ1IjoiYW5keWRvaGVydHkxNyIsImEiOiJjazJlbXN2Y2QwNnZkM2hzNXIwMHY4MjBtIn0.ujrr5_L7J-YxzVyN8Au-dQ'
           }).addTo(mymap);
 
+    // Creates markers for each shop, and sets their co-ordinates
+
           var marker = L.marker([56.456012, -2.992329], {icon: LittleGreenLarderIcon}).addTo(mymap);
           var marker2 = L.marker([56.463883, -2.985357], {icon: TaysideIcon}).addTo(mymap);
           var marker3 = L.marker([56.463977, -2.983983], {icon: SCRAPanticsIcon}).addTo(mymap);
           var marker4 = L.marker([56.464839, -2.970836], {icon: TransformIcon}).addTo(mymap);
 
-          var circle = L.circle([56.463883, -2.985357], {
-          	color: '#2D5B1F',
-          	fillColor: '#00B54B',
-          	fillOpacity: 0.5,
-          	radius: 1500
-          }).addTo(mymap);
+    // Text will appear when a marker is clicked and the popup is triggered
 
           marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. <br> <br>272 Perth Road <br> Dundee, Angus <br> DD2 1AE <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>10am - 6pm</strong> <br> Tuesday: <strong>10am - 6pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>4pm - 7pm</strong> <br> Friday: <strong>10am - 6pm</strong> <br> Saturday: <strong>9am - 5pm</strong> <br> Sunday: <strong>11am - 2pm</strong>  </p>")
 
