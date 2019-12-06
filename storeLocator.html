@@ -125,6 +125,7 @@ crossorigin=""/>
   marker3.bindPopup("<strong>SCRAPantics</strong><p><a href=\"http://scrapantics.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">SCRAPantics</a>, is a scrap store in Dundee which uses donations and sources scrap materials that can be used to make anything and everything. <br> <br> They recycle industry excess into art & design materials for use in the celebration of community togetherness. <br> <br>Unit 2, Meadow Mill, W Henderson's Wynd<br> Dundee, Angus <br> DD1 5BY <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>CLOSED</strong> <br> Tuesday: <strong>10am - 2pm</strong> <br> Wednesday: <strong>12pm - 4pm</strong> <br> Thursday: <strong>12pm - 6pm</strong> <br> Friday: <strong>CLOSED</strong> <br> Saturday: <strong>CLOSED</strong> <br> Sunday: <strong>CLOSED</strong></p>")
   marker4.bindPopup("<strong>Transform Furniture</strong><p><a href=\"https://www.transformcommunity.org.uk/transform-furniture//\" target=\"_blank\" title=\"Opens in a new window\">Transform Furniture</a>, provide quality reusable furniture and electrical household items to many in Dundee. </p> <p>The project has had a significant social, economic and environmental impact on the local community, and has received considerable praise and support from those benefiting from its service. <br> <br>20 Victoria Road <br> Dundee, Angus <br> DD1 1JN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9:30am - 5pm</strong> <br> Tuesday: <strong>9:30am - 5pm</strong> <br> Wednesday: <strong>9:30am - 5pm</strong> <br> Thursday: <strong>9:30am - 5pm</strong> <br> Friday: <strong>9:30am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong>  </p>")
 
+  // Open the popup for the store select through the search bar
   function openFromSearch(num) {
     if (num == 1){
       marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. <br> <br>272 Perth Road <br> Dundee, Angus <br> DD2 1AE <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>10am - 6pm</strong> <br> Tuesday: <strong>10am - 6pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>4pm - 7pm</strong> <br> Friday: <strong>10am - 6pm</strong> <br> Saturday: <strong>9am - 5pm</strong> <br> Sunday: <strong>11am - 2pm</strong>  </p>").openPopup();
@@ -168,6 +169,7 @@ crossorigin=""/>
     }
   }
 
+  // Filter list items on and off the screen while the user is searching
   function search() {
     // Declare variables
     var input, ul, li, a, i;
@@ -176,7 +178,7 @@ crossorigin=""/>
     ul = document.getElementById("menu");
     li = ul.getElementsByTagName("li");
 
-    // Loop through all list items, and hide those who don't match the search query
+    // Loop through all list items, and hide those who don't match the search query and hide all items when the search box is empty
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("button")[0];
       if (filter.length == 0){
