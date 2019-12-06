@@ -92,6 +92,7 @@ img{
 
 #mapid { height: 600px; }
 
+/* Give the buttons used by the search box styling */
 #menu button {
   color: black;
   border: 2px solid #4CAF50;
@@ -105,6 +106,15 @@ img{
   color: white;
 }
 
+#menu li {
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Set the size of the search bar */
 #search {
   width: 100%;
   font-size: 18px;
@@ -115,12 +125,4 @@ img{
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-#menu li {
-  padding-right: 12px;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  text-decoration: none;
-  color: black;
 }
