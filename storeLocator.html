@@ -83,7 +83,12 @@ crossorigin=""/>
     </div>
   </div>
   <script>
+
+// sets the co-ordinates from which the map will display and the zoom level of the application
+
     var mymap = L.map('mapid').setView([56.4599, -2.9685], 13);
+
+// Create custom icons for map markers
 
     var LittleGreenLarderIcon = L.icon({
         iconUrl: 'green.png',
@@ -105,7 +110,7 @@ crossorigin=""/>
         iconSize:     [50, 50], // size of the icon
     });
 
-
+// Display map on screen
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -114,11 +119,14 @@ crossorigin=""/>
     accessToken: 'pk.eyJ1IjoiYW5keWRvaGVydHkxNyIsImEiOiJjazJlbXN2Y2QwNnZkM2hzNXIwMHY4MjBtIn0.ujrr5_L7J-YxzVyN8Au-dQ'
   }).addTo(mymap);
 
+  // Add markers and position them within the map
+
   var marker = L.marker([56.456012, -2.992329], {icon: LittleGreenLarderIcon}).addTo(mymap);
   var marker2 = L.marker([56.463883, -2.985357], {icon: TaysideIcon}).addTo(mymap);
   var marker3 = L.marker([56.463977, -2.983983], {icon: SCRAPanticsIcon}).addTo(mymap);
   var marker4 = L.marker([56.464839, -2.970836], {icon: TransformIcon}).addTo(mymap);
 
+// text will appear above a marker when the popup is triggered
 
   marker.bindPopup("<strong>The Little Green Larder</strong><p><p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future.</p> <p> We offer fresh food, dried foods, whole foods plastic free for you to fill into your own container. Zero waste swaps for every day items. <br> <br>272 Perth Road <br> Dundee, Angus <br> DD2 1AE <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>10am - 6pm</strong> <br> Tuesday: <strong>10am - 6pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>4pm - 7pm</strong> <br> Friday: <strong>10am - 6pm</strong> <br> Saturday: <strong>9am - 5pm</strong> <br> Sunday: <strong>11am - 2pm</strong>  </p>")
   marker2.bindPopup("<strong>Tayside Re-Users</strong><p><a href=\"http://taysidereusers.co.uk//\" target=\"_blank\" title=\"Opens in a new window\">Tayside Re-Users</a>, provide low cost, quality furnishings to households in Tayside.</p> <p> They're accredited by Revolve, Scotland’s quality standard for re-use. It means that everything they refurbish has to meet strict safety requirements before they can sell it in their shop. <br> <br>75, 73 Douglas St <br> Dundee, Angus <br> DD1 5AN <br> United Kingdom <br> <br> <strong>Opening Hours:</strong> <br> <br> Monday: <strong>9am - 5pm</strong> <br> Tuesday: <strong>9am - 5pm</strong> <br> Wednesday: <strong>9am - 5pm</strong> <br> Thursday: <strong>9am - 5pm</strong> <br> Friday: <strong>9am - 5pm</strong> <br> Saturday: <strong>10am - 4pm</strong> <br> Sunday: <strong>CLOSED</strong> </p>")
