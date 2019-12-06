@@ -1,7 +1,7 @@
 {
   "name": "Little Green Larder",
-  "short_name": "Little Green,
+  "short_name": "Little Green",
   "display": "fullscreen",
   "theme_color": "#1a1a1a",
-"background_color": "#1a1a1a"
+  "background_color": "#1a1a1a"
 }
