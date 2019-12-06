@@ -4,7 +4,6 @@ var urlsToCache = [
   '/index.html',
   '/manifest.json',
   '/contact.html',
-  '/about.html',
   '/storeLocator.html',
   '/unsemantic-grid-responsive-tablet.css',
   '/stylesheet.css',
@@ -21,7 +20,7 @@ var urlsToCache = [
   '/banner.jpg'
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function(event)) {
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -30,12 +29,12 @@ self.addEventListener('install', function(event) {
       return cache.addAll(urlsToCache);
     })
   );
-});
+};
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function(event)) {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then(function(response)) {
         // Cache hit - return response
         if (response) {
           return response;
@@ -55,7 +54,8 @@ self.addEventListener('fetch', function(event) {
               });
             return response;
           }
-        );
-      })
-    );
-});
+        }
+      );
+    })
+  );
+};
